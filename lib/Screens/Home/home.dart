@@ -6,7 +6,7 @@ class Home extends StatelessWidget {
     return Container(
       child: 
 
-      Text('Login'),
+      Text('Home'),
       
     );
   }
