@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:team_gp/Screens/Widget/curveWidget.dart';
-import 'package:team_gp/Screens/Login/login_form.dart';
+import 'package:team_gp/Screens/Regester/regester_form.dart';
 
 
-class Login extends StatelessWidget {
+
+class Regester extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,6 +12,9 @@ class Login extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
+        iconTheme: IconThemeData(
+          color: Color(0xff6a515e),
+        ),
       ),
       body: Container(
         height: double.infinity,
@@ -37,7 +40,8 @@ class Login extends StatelessWidget {
                       colors: [Colors.white, Colors.white.withOpacity(0.4) ],
                     )
                   ),
-                child:  
+                  
+                  child:  
                     Image.asset('assets/icon8.png',
                     ),
                 ),
@@ -53,10 +57,9 @@ class Login extends StatelessWidget {
                     ),
                     ),
               ),
-
               Container(
-                    margin: const EdgeInsets.only(top: 200),
-                    child: LoginForm(),
+                    margin: const EdgeInsets.only(top: 220),
+                    child: RegesterForm(),
                   )
             ],
           ),
