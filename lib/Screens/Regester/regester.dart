@@ -13,7 +13,7 @@ class Regester extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
         iconTheme: IconThemeData(
-          color: Color(0xff6a515e),
+          color: Colors.blueGrey[900],
         ),
       ),
       body: Container(
@@ -22,7 +22,7 @@ class Regester extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(0xfff2cbd0), Color(0xfff4ced9) ],
+            colors: [Colors.blueGrey[50], Colors.blueGrey[50] ],
           )
         ),
         child: SingleChildScrollView(
@@ -52,7 +52,7 @@ class Regester extends StatelessWidget {
                     textAlign: TextAlign.center,
                       style: TextStyle(
                     fontSize: 20,
-                    color: Color(0xff6a515e),
+                    color: Colors.blueGrey[900],
                     fontWeight: FontWeight.bold
                     ),
                     ),

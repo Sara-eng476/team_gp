@@ -2,6 +2,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:team_gp/Screens/Admin/category/edit.dart';
 import 'Screens/Login/login.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -18,9 +19,12 @@ class MyApp extends StatelessWidget{
   {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      routes: {
+        EditProduct.id: (context) => EditProduct(),
+      },
       theme: ThemeData(
-        primaryColor: Color(0xff6a515e),
-        cursorColor: Color(0xff6a515e),
+        primaryColor:Colors.blueGrey[600],
+        cursorColor: Colors.blueGrey[600],
       ),
       home: Login(),
     );

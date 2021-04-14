@@ -40,7 +40,7 @@ class _LoginFormState extends State<LoginForm> {
                     textAlign: TextAlign.center,
                       style: TextStyle(
                     fontSize: 15,
-                    color: Color(0xff6a515e),
+                    color: Colors.blueGrey[900],
                     fontWeight: FontWeight.bold
                     ),
                     ),
@@ -61,27 +61,27 @@ class _LoginFormState extends State<LoginForm> {
                 },
                 decoration: InputDecoration(
                   filled: true,
-                  fillColor: Colors.pink[50],
+                  fillColor: Colors.white.withOpacity(0.9),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(50),
                     borderSide: BorderSide(
-                      color: Color(0xff6a515e),
+                      color: Colors.blueGrey[200],
                     )
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(50),
                     borderSide: BorderSide(
-                      color: Color(0xff6a515e),
+                      color: Colors.blueGrey[200],
                     )
                   ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(50),
                     borderSide: BorderSide(
-                      color: Color(0xff6a515e),
+                      color: Colors.blueGrey[200],
                     )
                   ),
-                  icon:Icon(Icons.email_rounded),
-                  labelText: "Email",
+                  icon:Icon(Icons.email_rounded,color: Colors.blueGrey[600],),
+                  labelText: "Email",focusColor: Colors.blueGrey[600],hoverColor: Colors.blueGrey[600],
                 ),
                 keyboardType: TextInputType.emailAddress,
               // autovalidate: true,
@@ -104,27 +104,27 @@ class _LoginFormState extends State<LoginForm> {
                 },
                 decoration: InputDecoration(
                   filled: true,
-                  fillColor: Colors.pink[50],
+                  fillColor: Colors.white.withOpacity(0.9),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(50),
                     borderSide: BorderSide(
-                      color: Color(0xff6a515e),
+                      color: Colors.blueGrey[200],
                     )
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(50),
                     borderSide: BorderSide(
-                      color: Color(0xff6a515e),
+                      color: Colors.blueGrey[200],
                     )
                   ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(50),
                     borderSide: BorderSide(
-                      color: Color(0xff6a515e),
+                      color: Colors.blueGrey[200],
                     )
                   ),
-                  icon:Icon(Icons.lock),
-                  labelText: "Password",
+                  icon:Icon(Icons.lock,color: Colors.blueGrey[600],),
+                  labelText: "Password",focusColor: Colors.blueGrey[600],hoverColor: Colors.blueGrey[600],
                 ),
                 obscureText: true,
              //  autovalidate: true,
@@ -171,7 +171,7 @@ class _LoginFormState extends State<LoginForm> {
                 height: 10,
               ),
 
-              Text("Don't Have an Account ! "),
+              Text("Don't Have an Account ! ", style: TextStyle(color: Colors.blueAccent[900]),),
 
               GradientButton(
                 width: 150,

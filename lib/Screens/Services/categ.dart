@@ -16,4 +16,17 @@ class Store{
   Stream<QuerySnapshot> loadCategory (){
     return _firebaseFirestore.collection('Category').snapshots();
   }
+
+
+  deleteProduct(documentId){
+    _firebaseFirestore.collection('Category').doc(documentId).delete();
+  }
+
+
+  editProduct(data, documentId) {
+    _firebaseFirestore
+        .collection('Category')
+        .doc(documentId)
+        .update(data);
+  }
 }

@@ -1,6 +1,7 @@
 import 'dart:math';
 
-import 'package:team_gp/Screens/Admin/category/view.dart';
+//import 'package:team_gp/Screens/Admin/category/view.dart';
+import 'package:team_gp/Screens/Login/login_form.dart';
 import 'package:team_gp/Screens/Widget/button.dart';
 import 'package:flutter/material.dart';
 import 'package:team_gp/Screens/Services/auth.dart';
@@ -42,7 +43,7 @@ class _RegesterFormState extends State<RegesterForm> {
                     textAlign: TextAlign.center,
                       style: TextStyle(
                     fontSize: 15,
-                    color: Color(0xff6a515e),
+                    color: Colors.blueGrey[900],
                     fontWeight: FontWeight.bold
                     ),
                     ),
@@ -64,27 +65,27 @@ class _RegesterFormState extends State<RegesterForm> {
               controller: _nameController,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Colors.pink[50],
+                fillColor: Colors.white.withOpacity(0.9),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(50),
                   borderSide: BorderSide(
-                    color: Color(0xff6a515e),
+                    color: Colors.blueGrey[200],
                   )
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(50),
                   borderSide: BorderSide(
-                    color: Color(0xff6a515e),
+                    color: Colors.blueGrey[200],
                   )
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(50),
                   borderSide: BorderSide(
-                    color: Color(0xff6a515e),
+                    color: Colors.blueGrey[200],
                   )
                 ),
-                icon:Icon(Icons.perm_identity),
-                labelText: "Name",
+                icon:Icon(Icons.perm_identity,color: Colors.blueGrey[600],),
+                labelText: "Name",focusColor: Colors.blueGrey[600],hoverColor: Colors.blueGrey[600],
               ),
             // autovalidate: true,
             ),
@@ -107,27 +108,27 @@ class _RegesterFormState extends State<RegesterForm> {
               },
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Colors.pink[50],
+                fillColor: Colors.white.withOpacity(0.9),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(50),
                   borderSide: BorderSide(
-                    color: Color(0xff6a515e),
+                    color: Colors.blueGrey[200],
                   )
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(50),
                   borderSide: BorderSide(
-                    color: Color(0xff6a515e),
+                    color: Colors.blueGrey[200],
                   )
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(50),
                   borderSide: BorderSide(
-                    color: Color(0xff6a515e),
+                    color: Colors.blueGrey[200],
                   )
                 ),
-                icon:Icon(Icons.email_rounded),
-                labelText: "Email",
+                icon:Icon(Icons.email_rounded,color: Colors.blueGrey[600],),
+                labelText: "Email",focusColor: Colors.blueGrey[600],hoverColor: Colors.blueGrey[600],
               ),
               keyboardType: TextInputType.emailAddress,
              //autovalidate: true,
@@ -151,27 +152,27 @@ class _RegesterFormState extends State<RegesterForm> {
               },
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Colors.pink[50],
+                fillColor: Colors.white.withOpacity(0.9),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(50),
                   borderSide: BorderSide(
-                    color: Color(0xff6a515e),
+                    color: Colors.blueGrey[200],
                   )
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(50),
                   borderSide: BorderSide(
-                    color: Color(0xff6a515e),
+                    color: Colors.blueGrey[200],
                   )
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(50),
                   borderSide: BorderSide(
-                    color: Color(0xff6a515e),
+                    color: Colors.blueGrey[200],
                   )
                 ),
-                icon:Icon(Icons.lock),
-                labelText: "Password",
+                icon:Icon(Icons.lock,color: Colors.blueGrey[600],),
+                labelText: "Password",focusColor: Colors.blueGrey[600],hoverColor: Colors.blueGrey[600],
               ),
               obscureText: true,
              //autovalidate: true,
@@ -195,7 +196,7 @@ class _RegesterFormState extends State<RegesterForm> {
                           try{
                          final authReslt= await _auth.signUp(_email, _password);
                          Navigator.push(context,
-                                        MaterialPageRoute(builder: (_) => ViewCategory()));
+                                        MaterialPageRoute(builder: (_) => LoginForm()));
                           }catch(e){
                             Scaffold.of(context).showSnackBar(SnackBar(
                               content: Text(
@@ -204,7 +205,6 @@ class _RegesterFormState extends State<RegesterForm> {
                               ),
                             ));
                           }
-                         
                       }
                     },
                     text: Text(

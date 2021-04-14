@@ -21,7 +21,7 @@ class GradientButton extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
-          colors: [Color(0xffffae88), Color(0xff8f93ea)],
+          colors: [Colors.blue[200], Colors.blueGrey[600]],
         ),
       ),
       child: MaterialButton(

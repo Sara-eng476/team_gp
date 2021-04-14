@@ -26,7 +26,7 @@ class _CustomDialogState extends State<CustomDialog> {
     Widget _showImage(){
       return CircleAvatar(
             backgroundImage: _image == null ? null : FileImage(_image),
-            backgroundColor: Color(0xfff2cbd0),
+            backgroundColor: Colors.blueGrey[100],
             radius: 60,
           );
                           
@@ -54,7 +54,7 @@ class _CustomDialogState extends State<CustomDialog> {
                 ),
                 margin: EdgeInsets.only(top: 13.0,right: 8.0),
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.blueGrey[50],
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(16.0),
                     boxShadow: <BoxShadow>[
@@ -83,13 +83,13 @@ class _CustomDialogState extends State<CustomDialog> {
                           padding: EdgeInsets.all(2),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100),
-                            color: Color(0xfff2cbd0),
+                            color: Colors.blue[50],
                             border: Border.all(
                               width: 1,
-                              color: Color(0xff6a515e)
+                              color: Colors.blueGrey[200]
                             )
                           ),
-                          child: Icon(Icons.add_photo_alternate_rounded, color: Color(0xff6a515e), size: 30,))),
+                          child: Icon(Icons.add_photo_alternate_rounded, color: Colors.blueGrey[500], size: 30,))),
                         // دا البوتن اللي بيضيف الصورة
                         GestureDetector(onTap:() { uploadImage(context);}, 
                         child: Container(
@@ -97,13 +97,13 @@ class _CustomDialogState extends State<CustomDialog> {
                           padding: EdgeInsets.all(2),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100),
-                            color: Color(0xfff2cbd0),
+                            color: Colors.blue[50],
                             border: Border.all(
                               width: 1,
-                              color: Color(0xff6a515e)
+                              color: Colors.blueGrey[200]
                             )
                           ),
-                          child: Icon(Icons.check_circle , color: Color(0xff6a515e), size: 30,))),
+                          child: Icon(Icons.check_circle , color: Colors.blueGrey[500], size: 30,))),
                         SizedBox(height:10,),
                         // التيكست فيلد بتاع الاسم
                         TextFormField(
@@ -118,23 +118,23 @@ class _CustomDialogState extends State<CustomDialog> {
                           },
                             decoration: InputDecoration(
                               filled: true,
-                              fillColor: Colors.deepOrange[50],
+                              fillColor: Colors.white.withOpacity(0.9),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(50),
                                 borderSide: BorderSide(
-                                  color: Color(0xff6a515e),
+                                  color: Colors.blueGrey[200],
                                 )
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(50),
                                 borderSide: BorderSide(
-                                  color: Color(0xff6a515e),
+                                  color: Colors.blueGrey[200],
                                 )
                               ),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(50),
                                 borderSide: BorderSide(
-                                  color: Color(0xff6a515e),
+                                  color: Colors.blueGrey[200],
                                 )
                               ),
                               labelText: "Name",
