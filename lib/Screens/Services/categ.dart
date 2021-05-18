@@ -18,12 +18,12 @@ class Store{
   }
 
 
-  deleteProduct(documentId){
+  deleteCategory(documentId){
     _firebaseFirestore.collection('Category').doc(documentId).delete();
   }
 
 
-  editProduct(data, documentId) {
+  editCategory(data, documentId) {
     _firebaseFirestore
         .collection('Category')
         .doc(documentId)

@@ -1,6 +1,7 @@
 import 'dart:math';
 
 //import 'package:team_gp/Screens/Admin/category/view.dart';
+import 'package:team_gp/Screens/Login/login.dart';
 import 'package:team_gp/Screens/Login/login_form.dart';
 import 'package:team_gp/Screens/Widget/button.dart';
 import 'package:flutter/material.dart';
@@ -196,7 +197,7 @@ class _RegesterFormState extends State<RegesterForm> {
                           try{
                          final authReslt= await _auth.signUp(_email, _password);
                          Navigator.push(context,
-                                        MaterialPageRoute(builder: (_) => LoginForm()));
+                                       MaterialPageRoute(builder: (_) => Login()));
                           }catch(e){
                             Scaffold.of(context).showSnackBar(SnackBar(
                               content: Text(

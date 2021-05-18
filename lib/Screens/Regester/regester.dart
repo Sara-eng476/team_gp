@@ -60,7 +60,8 @@ class Regester extends StatelessWidget {
               Container(
                     margin: const EdgeInsets.only(top: 220),
                     child: RegesterForm(),
-                  )
+                  ),
+                
             ],
           ),
         ),

@@ -8,13 +8,13 @@ import 'package:path/path.dart' as p;
 import 'package:team_gp/Screens/Widget/button.dart'; 
 
 
-class EditProduct extends StatefulWidget{
+class EditCategory extends StatefulWidget{
 static String id = 'Edit Product';
   @override
-  _EditProductState createState() => _EditProductState();
+  _EditCategoryState createState() => _EditCategoryState();
 }
 
-class _EditProductState extends State<EditProduct> {
+class _EditCategoryState extends State<EditCategory> {
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
     final _store = Store();
@@ -154,7 +154,7 @@ class _EditProductState extends State<EditProduct> {
                                       //  uploadImage(context);
                                         _formkey.currentState.save();
                                         //_formkey.currentState.reset();
-                                        _store.editProduct(({
+                                        _store.editCategory(({
                                           'name' : _name,
                                           'image' : _imageURL,
                                         }

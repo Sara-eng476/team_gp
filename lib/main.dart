@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        EditProduct.id: (context) => EditProduct(),
+        EditCategory.id: (context) => EditCategory(),
       },
       theme: ThemeData(
         primaryColor:Colors.blueGrey[600],

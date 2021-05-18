@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:team_gp/Screens/Admin/category/view.dart';
 import 'package:team_gp/Screens/Widget/button.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +15,9 @@ class LoginForm extends StatefulWidget{
 }
 
 class _LoginFormState extends State<LoginForm> {
+
+  final FirebaseAuth _firebaseAuth =FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -192,11 +197,73 @@ class _LoginFormState extends State<LoginForm> {
                   Icons.arrow_forward,
                   color: Colors.white,
                 ),
-              ),
-           
-            ],
-          ),
-        ),
-    );
+              ), 
+              Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                            children: <Widget>[
+                                Expanded(
+                                    child: Divider(
+                                      color: Colors.black,
+                                      height: 30,
+                                      indent: 50,
+                                      thickness: 2,
+                                    )
+                                ),       
+
+                                Text("OR"),        
+
+                                Expanded(
+                                    child: Divider(
+                                      color: Colors.black,
+                                      height: 30,
+                                      endIndent: 50,
+                                      thickness: 2,
+                                    )
+                                ),
+                            ]
+                        ),
+                      RaisedButton(
+                        onPressed: ()async {
+                          await signInWithGoogle();
+                                },
+                              color: Colors.green,
+                              child: Text('SIgnIn with google'),
+                                ),
+                      RaisedButton(
+                        onPressed: ()async {
+                         await signOut();
+                                },
+                           color: Colors.red,
+                             child: Text('signOut'),
+                                )
+                                              ],
+                                            ),
+                                          ),          
+                                      ],
+                                    ),
+                                  ),
+                              );
+                            }
+                          
+        Future <void> signInWithGoogle() async{
+          
+         GoogleSignInAccount googleSignInAccount= await _googleSignIn.signIn();
+         GoogleSignInAuthentication googleSignInAuthentication =await googleSignInAccount.authentication;
+         AuthCredential authCredential = GoogleAuthProvider.credential(idToken: googleSignInAuthentication.idToken, accessToken: googleSignInAuthentication.accessToken );
+        UserCredential usercredential =await _firebaseAuth.signInWithCredential(authCredential);
+        User user = usercredential.user;
+         print('user email = ${user.email}');
+         Navigator.push(context,
+        MaterialPageRoute(builder: (_) => ViewCategory()));
+        }
+        Future<void> signOut() async {
+    await _googleSignIn.signOut();
+    print('sign out');
   }
 }
+
+

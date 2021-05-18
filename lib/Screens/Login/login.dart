@@ -57,7 +57,7 @@ class Login extends StatelessWidget {
               Container(
                     margin: const EdgeInsets.only(top: 200),
                     child: LoginForm(),
-                  )
+                  ),
             ],
           ),
         ),

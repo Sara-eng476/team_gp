@@ -1,4 +1,4 @@
-
+/* 
 
 import 'dart:ui';
 import 'package:flutter/painting.dart';
@@ -11,4 +11,4 @@ class Pallete{
   static const Color kMainColor = Color(0xFFDCFEDC8);
   static const Color kSecondaryColor = Color(0xFFE0F7FA);
 
-}
+} */
