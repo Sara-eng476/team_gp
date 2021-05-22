@@ -21,11 +21,11 @@ class GradientButton extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
-          colors: [Colors.blue[200], Colors.blueGrey[600]],
+          colors: [Colors.red[100], Colors.red[900]],
         ),
       ),
       child: MaterialButton(
-          onPressed: this.onPressed, 
+          onPressed: this.onPressed,
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           shape: StadiumBorder(),
           child: Padding(

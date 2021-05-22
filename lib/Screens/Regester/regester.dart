@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:team_gp/Screens/Widget/curveWidget.dart';
 import 'package:team_gp/Screens/Regester/regester_form.dart';
 
-
-
 class Regester extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -19,14 +17,13 @@ class Regester extends StatelessWidget {
       body: Container(
         height: double.infinity,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Colors.blueGrey[50], Colors.blueGrey[50] ],
-          )
-        ),
+            gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Colors.blueGrey[50], Colors.blueGrey[50]],
+        )),
         child: SingleChildScrollView(
-                  child: Stack(
+          child: Stack(
             children: [
               CurvedWidget(
                 child: Container(
@@ -34,34 +31,31 @@ class Regester extends StatelessWidget {
                   width: double.infinity,
                   height: 280,
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [Colors.white, Colors.white.withOpacity(0.4) ],
-                    )
+                      gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [Colors.white, Colors.white.withOpacity(0.4)],
+                  )),
+                  child: Image.asset(
+                    'assets/icon8.png',
                   ),
-                  
-                  child:  
-                    Image.asset('assets/icon8.png',
-                    ),
                 ),
               ),
               Container(
                 padding: const EdgeInsets.only(top: 85, left: 105),
-                child: Text("Welcom To RO'YA" ,
-                    textAlign: TextAlign.center,
-                      style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.blueGrey[900],
-                    fontWeight: FontWeight.bold
-                    ),
-                    ),
+                child: Text(
+                  "Welcom To RO'YA",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.blueGrey[900],
+                      fontWeight: FontWeight.bold),
+                ),
               ),
               Container(
-                    margin: const EdgeInsets.only(top: 220),
-                    child: RegesterForm(),
-                  ),
-                
+                margin: const EdgeInsets.only(top: 220),
+                child: RegesterForm(),
+              ),
             ],
           ),
         ),

@@ -1,32 +1,29 @@
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:team_gp/Model/category.dart';
 
-
-class Store{
+class Store {
+  
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
-
-  addCategory(Category category){
+  addCategory(Category category) {
     _firebaseFirestore.collection('Category').add({
-      'name' : category.name,
-      'image' : category.image,
+      'name': category.name,
+      'image': category.image,
+      'createdOn':FieldValue.serverTimestamp(),
+    //  'id': 
     });
   }
 
-  Stream<QuerySnapshot> loadCategory (){
+  Stream<QuerySnapshot> loadCategory() {
     return _firebaseFirestore.collection('Category').snapshots();
   }
 
-
-  deleteCategory(documentId){
+  deleteCategory(documentId) {
     _firebaseFirestore.collection('Category').doc(documentId).delete();
   }
 
-
   editCategory(data, documentId) {
-    _firebaseFirestore
-        .collection('Category')
-        .doc(documentId)
-        .update(data);
+    _firebaseFirestore.collection('Category').doc(documentId).update(data);
   }
 }

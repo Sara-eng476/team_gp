@@ -6,43 +6,47 @@ import 'package:image_picker/image_picker.dart';
 import 'package:team_gp/Screens/Services/categ.dart';
 import 'package:path/path.dart' as p;
 import 'package:team_gp/Screens/Widget/button.dart'; 
-
+import '../../../constant.dart';
     class CustomDialog extends StatefulWidget {
-
   @override
   _CustomDialogState createState() => _CustomDialogState();
 }
-
 class _CustomDialogState extends State<CustomDialog> {
     final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
-    
     final _store = Store();
     String _imageURL;
     String _name;
     File _image;
-    
-
     @override
     Widget _showImage(){
       return CircleAvatar(
             backgroundImage: _image == null ? null : FileImage(_image),
-            backgroundColor: Colors.blueGrey[100],
+            backgroundColor: Colors.red[100],
             radius: 60,
+child: GestureDetector(onTap: takeImage,
+    child: Container(
+        margin: EdgeInsets.all(0),
+        padding: EdgeInsets.all(80),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(100),
+            color: Colors.transparent,
+            border: Border.all(
+                width: 1,
+                color: Colors.transparent
+            )
+        ),
+        child: Icon(Icons.add_photo_alternate_rounded, color: Colors.red[700], size: 40,))),
           );
-                          
     }
-
     @override
     Widget build(BuildContext context) {
         return Dialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
-        elevation: 0.0,
+        elevation: 50.0,
         backgroundColor: Colors.transparent,
         child: dialogContent(context),
         );
     }
-
-
     Widget dialogContent(BuildContext context) {
         return Container(
         margin: EdgeInsets.only(left: 0.0,right: 0.0),
@@ -50,63 +54,69 @@ class _CustomDialogState extends State<CustomDialog> {
             children: <Widget>[
             Container(
                 padding: EdgeInsets.only(
-                top: 60.0,
+                top: 30.0,
+                left: 15,
+                right: 15
                 ),
                 margin: EdgeInsets.only(top: 13.0,right: 8.0),
                 decoration: BoxDecoration(
-                    color: Colors.blueGrey[50],
+                    color: Colors.white,
                     shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(16.0),
-                    boxShadow: <BoxShadow>[
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(80),
+                      bottomRight: Radius.circular(80),),
+                    /* boxShadow: <BoxShadow>[
                     BoxShadow(
                         color: Colors.black26,
                         blurRadius: 0.0,
                         offset: Offset(0.0, 0.0),
                     ),
-                    ]),
+                    ] */),
                 child: SingleChildScrollView(
                     child: Form(
                     key : _formkey,
                     autovalidate: true,
                     child: Column(
                     mainAxisSize: MainAxisSize.min,
-                    //crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
+                      Text("ADD CATEGORIES",
+                      style: TextStyle(color: Colors.black, fontSize: 16.5)),
+                      SizedBox(
+                        height: 40
+                      ),
                       _showImage(),
-                        SizedBox(
-                        height: 10.0,
-                        ),
-                        //دا البوتن اللي بنجيب منه الصورة من الجالري 
-                        GestureDetector(onTap: takeImage, 
+                        //دا البوتن اللي بنجيب منه الصورة من الجالري
+                        /*GestureDetector(onTap: takeImage,
                         child: Container(
                           margin: EdgeInsets.all(0),
                           padding: EdgeInsets.all(2),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100),
-                            color: Colors.blue[50],
+                            color: Colors.transparent,
                             border: Border.all(
                               width: 1,
-                              color: Colors.blueGrey[200]
+                              color: Colors.transparent
                             )
                           ),
-                          child: Icon(Icons.add_photo_alternate_rounded, color: Colors.blueGrey[500], size: 30,))),
+                          child: Icon(Icons.add_photo_alternate_rounded, color: Colors.blueGrey[500], size: 40,))),*/
                         // دا البوتن اللي بيضيف الصورة
-                        GestureDetector(onTap:() { uploadImage(context);}, 
+                        /*GestureDetector(onTap:() { uploadImage(context);},
                         child: Container(
                           margin: EdgeInsets.all(0),
                           padding: EdgeInsets.all(2),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100),
-                            color: Colors.blue[50],
+                            color: Colors.transparent,
                             border: Border.all(
                               width: 1,
-                              color: Colors.blueGrey[200]
+                              color: Colors.transparent
                             )
                           ),
-                          child: Icon(Icons.check_circle , color: Colors.blueGrey[500], size: 30,))),
-                        SizedBox(height:10,),
+                          child: Icon(Icons.check_circle , color: Colors.blueGrey[500], size: 40,))),*/
+                        SizedBox(height:20,),
                         // التيكست فيلد بتاع الاسم
-                        TextFormField(
+                      Container(
+                        child: TextFormField(
                           validator: (String value){
                               if(value.isEmpty){
                               return 'Name is required';}
@@ -122,87 +132,87 @@ class _CustomDialogState extends State<CustomDialog> {
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(50),
                                 borderSide: BorderSide(
-                                  color: Colors.blueGrey[200],
+                                  color: Colors.red,
                                 )
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(50),
                                 borderSide: BorderSide(
-                                  color: Colors.blueGrey[200],
+                                  color: Colors.red,
                                 )
                               ),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(50),
                                 borderSide: BorderSide(
-                                  color: Colors.blueGrey[200],
+                                  color: Colors.red,
                                 )
                               ),
-                              labelText: "Name",
+                              suffixIcon: GestureDetector(onTap:() { uploadImage(context);},
+                                  child: Container(
+                                      margin: EdgeInsets.all(0),
+                                      padding: EdgeInsets.all(2),
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(100),
+                                          color: Colors.transparent,
+                                          border: Border.all(
+                                              width: 1,
+                                              color: Colors.transparent
+                                          )
+                                      ),
+                                      child: Icon(Icons.edit_attributes_sharp , color: Colors.red[700], size: 30,))),
+                              labelText: "Categoty Name",
                             ),
                             keyboardType: TextInputType.text,
                           ),
+                      ),
                           // كدا الفيلد خلص
-                        SizedBox(height: 15.0),
+                        SizedBox(height: 50.0),
                           // البوتن
-                       /* Builder(
-                          builder: (context)=> InkWell(
-                          child: Container(
-                            width: 80,
-                              padding: EdgeInsets.only(top: 15.0,bottom:15.0),
-                              decoration: BoxDecoration(
-                              color:Colors.deepOrange[300],
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(16.0),
-                                  topRight: Radius.circular(16.0),
-                                  bottomLeft: Radius.circular(16.0),
-                                  bottomRight: Radius.circular(16.0)),
-                              ),
-                              child:  Text(
-                              "Add",
-                              style: TextStyle(color: Colors.white,fontSize: 20.0),
-                              textAlign: TextAlign.center,
-                              ),
-                          ),
-                          onTap:(){
-                            uploadImage(context);
-                             if(_formkey.currentState.validate()){
-                               //  uploadImage(context);
+                    /*  Container(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child:FlatButton(
+                            child: Text('ADD',style: TextStyle(color: Colors.white, fontSize: 15,)),
+                            minWidth: 100.0,
+                            height: 50,
+                            color: Colors.red[700],
+                            onPressed: () {
+                              uploadImage(context);
+                              if(_formkey.currentState.validate()){
+                                //  uploadImage(context);
                                 _formkey.currentState.save();
                                 //_formkey.currentState.reset();
                                 _store.addCategory(Category(
-                                 name: _name,
-                                 image: _imageURL,
+                                  name: _name,
+                                  image: _imageURL,
                                 ));
                               }
-                          },
-                          ),
-                        ),*/
-                        GradientButton(
-                              width: 109,
-                              height: 50,
-                              onPressed: () {
-                                uploadImage(context);
-                                if(_formkey.currentState.validate()){
-                                  //  uploadImage(context);
-                                    _formkey.currentState.save();
-                                    //_formkey.currentState.reset();
-                                    _store.addCategory(Category(
-                                    name: _name,
-                                    image: _imageURL,
-                                    ));
-                                  }
-                              },
-                            text: 
-                            Text(
-                              "Add",
-                              style: TextStyle(color: Colors.white,fontSize: 20.0),
-                              textAlign: TextAlign.center,
-                             ),
-                            icon: Icon(null),
-                            ),
-                        SizedBox(
-                            height: 20,
-                        ),
+                            },
+                          ),),
+                      ),*/
+                      GradientButton(
+                      width: 109,
+                      height: 50,
+                      onPressed: () {
+                              uploadImage(context);
+                              if(_formkey.currentState.validate()){
+                                //  uploadImage(context);
+                                _formkey.currentState.save();
+                                //_formkey.currentState.reset();
+                                _store.addCategory(Category(
+                                  name: _name,
+                                  image: _imageURL,
+                                ));
+                              }
+                            },
+                      text: Text(
+                        "Add",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 15.0),
+                      ),
+                      icon: Icon(Icons.add,size: 15,color: Colors.white,),
+                    ),
+                        SizedBox(height: 20,),
                     ],
                     ),
                   ),
@@ -219,7 +229,7 @@ class _CustomDialogState extends State<CustomDialog> {
                     alignment: Alignment.topRight,
                     child: CircleAvatar(
                     radius: 14.0,
-                    backgroundColor: Colors.red[400],
+                    backgroundColor: Colors.red[700],
                     child: Icon(Icons.close, color: Colors.white,size: 20,),
                     ),
                 ),
@@ -239,7 +249,6 @@ class _CustomDialogState extends State<CustomDialog> {
    // دي الفانكشن اللي بتفتح الصرو من الجالري                          
   void takeImage () async{
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
-
     setState((){
       _image = image;
     });
@@ -252,7 +261,6 @@ class _CustomDialogState extends State<CustomDialog> {
     }else
     return Text("No Image Selected");
   }*/
-
 /////// الفانكشن اللي بتخزن الصور في الستوردج
   void uploadImage(context) async{
     try {
@@ -277,5 +285,3 @@ class _CustomDialogState extends State<CustomDialog> {
 }
 // الفانكشن خلصت هنا 
 }
-
-

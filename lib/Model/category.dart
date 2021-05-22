@@ -1,22 +1,16 @@
+//import 'package:team_gp/Model/product.dart';
 
-import 'package:team_gp/Model/product.dart';
-
-class Category{
+class Category {
   String name;
   String image;
   String id;
-  List<Product> products;
+  
+  //List<Product> products;
 
   Category({
     this.name,
     this.image,
     this.id,
-    this.products
+    // this.products
   });
 }
-
-
-
-
-
-
