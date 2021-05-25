@@ -4,6 +4,9 @@ const kPrimaryColor = Color(0xff4B6772);
 const kPrimaryLightColor = Color(0xFFF1E6FF);
 
 
+ 
+
+
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,

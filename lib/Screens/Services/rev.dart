@@ -12,10 +12,16 @@ class ReviewFirebase {
       'createAt': review.createAt,
       'productId': review.productId,
       'userId': review.userId,
+      'userName': review.userName,
     });
   }
 
   Stream<QuerySnapshot> loadReviews() {
     return _firebaseFirestore.collection('Review').snapshots();
   }
+
+  deleteReview(documentId) {
+    _firebaseFirestore.collection('Review').doc(documentId).delete();
+  }
+
 }

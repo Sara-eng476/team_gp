@@ -1,10 +1,10 @@
 import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:team_gp/Screens/Admin/profile/editProfile.dart';
 import 'package:team_gp/Screens/Admin/profile/settings.dart';
 import 'package:team_gp/Screens/Admin/profile/showProfile.dart';
-
+import 'package:team_gp/Screens/Notification/addReviewNoti.dart';
 import '../Admin/dashboard.dart';
+import '../../static.dart';
 
 class AdminHome extends StatefulWidget {
   AdminHome({Key key}) : super(key: key);
@@ -18,6 +18,7 @@ class _AdminHomeState extends State<AdminHome> {
     Dashboard(),
     ShowProfile(),
     SettingsPage(),
+    AddReviewNotification(),
   ];
   int _selectedIndex = 0;
   void _onPageChanged(int index) {
@@ -67,8 +68,49 @@ class _AdminHomeState extends State<AdminHome> {
             icon: Icon(Icons.settings, color: Colors.black,),
             activeIcon: Icon(Icons.settings, color: Colors.red[600],),
             title: Text('Setting'),
-          )
+          ),
+          BubbleBottomBarItem(
+            backgroundColor: Colors.red[600],
+            icon: buildCustomBadge
+            (
+              counter: ValueOfNotificatio.countFav,
+              child: Icon(Icons.notifications, color: Colors.black,)
+              ),
+            activeIcon: Icon(Icons.notifications, color: Colors.red[600],),
+            title: Text('Notifications'),
+          ),
           ],
         ));
   }
+}
+
+Widget buildCustomBadge({
+  @required int counter,
+  @required Widget child,
+}) {
+  final text = counter.toString();
+  final deltaFontSize = (text.length - 1) * 3.0;
+
+  return Stack(
+    overflow: Overflow.visible,
+    children: [
+      child,
+      Positioned(
+        top: -6,
+        right: -20,
+        child: CircleAvatar(
+          backgroundColor: Colors.red,
+          radius: 10,
+          child: Text(
+            text,
+            style: TextStyle(
+              fontSize: 17 - deltaFontSize,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+        ),
+      ),
+    ],
+  );
 }

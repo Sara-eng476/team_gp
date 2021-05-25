@@ -6,7 +6,8 @@ import 'package:team_gp/Screens/Admin/product/view.dart';
 import 'package:team_gp/Screens/Home/ListOfUser.dart';
 import 'package:team_gp/Screens/Home/categoruHome.dart';
 import 'package:team_gp/Screens/Home/productHome.dart';
-
+import 'package:team_gp/Screens/Admin/review/view.dart';
+import '../../static.dart';
 import 'category/add.dart';
 import 'category/view.dart';
 
@@ -135,7 +136,12 @@ class _DashboardState extends State<Dashboard> {
                 Card(
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
-                    onTap:(){},
+                    onTap:(){
+                      showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) =>
+                                        ViewReview());
+                    },
                     splashColor: Colors.orange,
                     child: Center(
                       child: Column(
@@ -154,7 +160,12 @@ class _DashboardState extends State<Dashboard> {
                 Card(
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
-                    onTap:(){},
+                    onTap:(){
+                      setState(() {
+                         ValueOfNotificatio.countFav +=1;
+                        // return AddReviewNotification();
+                       });
+                    },
                     splashColor: Colors.purple,
                     child: Center(
                       child: Column(

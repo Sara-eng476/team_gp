@@ -6,6 +6,7 @@ class Review {
   String comment;
   Timestamp createAt;
   String userId;
+  String userName;
 
-  Review({this.comment, this.createAt, this.id, this.productId, this.userId});
+  Review({this.comment, this.createAt, this.id, this.productId, this.userId, this.userName});
 }
