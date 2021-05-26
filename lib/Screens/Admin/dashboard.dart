@@ -6,8 +6,8 @@ import 'package:team_gp/Screens/Admin/product/view.dart';
 import 'package:team_gp/Screens/Home/ListOfUser.dart';
 import 'package:team_gp/Screens/Home/categoruHome.dart';
 import 'package:team_gp/Screens/Home/productHome.dart';
-import 'package:team_gp/Screens/Admin/review/view.dart';
-import '../../static.dart';
+//import 'package:team_gp/Screens/Admin/review/view.dart';
+//import '../../static.dart';
 import 'category/add.dart';
 import 'category/view.dart';
 
@@ -88,22 +88,25 @@ class _DashboardState extends State<Dashboard> {
                 Card(
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
-                    onTap:(){
+                    onTap: () {
                       showDialog(
-                                    context: context,
-                                    builder: (BuildContext context) =>
-                                        CategoryHome());
+                          context: context,
+                          builder: (BuildContext context) => CategoryHome());
                     },
                     splashColor: Colors.cyan,
                     child: Center(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.category_outlined,size: 40,color: Colors.cyan,),
-                          Text("Category",
-                          style: TextStyle(
-                              fontSize: 17 
-                          ),),
+                          Icon(
+                            Icons.category_outlined,
+                            size: 40,
+                            color: Colors.cyan,
+                          ),
+                          Text(
+                            "Category",
+                            style: TextStyle(fontSize: 17),
+                          ),
                         ],
                       ),
                     ),
@@ -112,22 +115,25 @@ class _DashboardState extends State<Dashboard> {
                 Card(
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
-                    onTap:(){
+                    onTap: () {
                       showDialog(
-                                    context: context,
-                                    builder: (BuildContext context) =>
-                                        ProductHome());
+                          context: context,
+                          builder: (BuildContext context) => ProductHome());
                     },
                     splashColor: Colors.green,
                     child: Center(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.view_list_outlined ,size: 40,color: Colors.green,),
-                          Text("Product",
-                          style: TextStyle(
-                              fontSize: 17 
-                          ),),
+                          Icon(
+                            Icons.view_list_outlined,
+                            size: 40,
+                            color: Colors.green,
+                          ),
+                          Text(
+                            "Product",
+                            style: TextStyle(fontSize: 17),
+                          ),
                         ],
                       ),
                     ),
@@ -136,22 +142,26 @@ class _DashboardState extends State<Dashboard> {
                 Card(
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
-                    onTap:(){
-                      showDialog(
-                                    context: context,
-                                    builder: (BuildContext context) =>
-                                        ViewReview());
+                    onTap: () {
+                      //showDialog(
+                      //            context: context,
+                      //          builder: (BuildContext context) =>
+                      //            ViewReview());
                     },
                     splashColor: Colors.orange,
                     child: Center(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.thumbs_up_down_outlined ,size: 40,color: Colors.orange,),
-                          Text("Reviews",
-                          style: TextStyle(
-                              fontSize: 17 
-                          ),),
+                          Icon(
+                            Icons.thumbs_up_down_outlined,
+                            size: 40,
+                            color: Colors.orange,
+                          ),
+                          Text(
+                            "Reviews",
+                            style: TextStyle(fontSize: 17),
+                          ),
                         ],
                       ),
                     ),
@@ -160,22 +170,26 @@ class _DashboardState extends State<Dashboard> {
                 Card(
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
-                    onTap:(){
+                    onTap: () {
                       setState(() {
-                         ValueOfNotificatio.countFav +=1;
+                        //   ValueOfNotificatio.countFav +=1;
                         // return AddReviewNotification();
-                       });
+                      });
                     },
                     splashColor: Colors.purple,
                     child: Center(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.message_outlined,size: 40,color: Colors.purple,),
-                          Text("Mesagess",
-                          style: TextStyle(
-                              fontSize: 17 
-                          ),),
+                          Icon(
+                            Icons.message_outlined,
+                            size: 40,
+                            color: Colors.purple,
+                          ),
+                          Text(
+                            "Mesagess",
+                            style: TextStyle(fontSize: 17),
+                          ),
                         ],
                       ),
                     ),
@@ -184,22 +198,25 @@ class _DashboardState extends State<Dashboard> {
                 Card(
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
-                    onTap:(){
+                    onTap: () {
                       showDialog(
-                                    context: context,
-                                    builder: (BuildContext context) =>
-                                        ListUser());
+                          context: context,
+                          builder: (BuildContext context) => ListUser());
                     },
                     splashColor: Colors.blue[700],
                     child: Center(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.people_outlined,size: 40,color: Colors.blue[700],),
-                          Text("User",
-                          style: TextStyle(
-                              fontSize: 17 
-                          ),),
+                          Icon(
+                            Icons.people_outlined,
+                            size: 40,
+                            color: Colors.blue[700],
+                          ),
+                          Text(
+                            "User",
+                            style: TextStyle(fontSize: 17),
+                          ),
                         ],
                       ),
                     ),
@@ -208,27 +225,31 @@ class _DashboardState extends State<Dashboard> {
                 Card(
                   margin: EdgeInsets.all(8.0),
                   child: InkWell(
-                    onTap:(){},
+                    onTap: () {},
                     splashColor: Colors.red,
                     child: Center(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.block_outlined,size: 40,color: Colors.red,),
-                          Text("Block",
-                          style: TextStyle(
-                              fontSize: 17 
-                          ),),
+                          Icon(
+                            Icons.block_outlined,
+                            size: 40,
+                            color: Colors.red,
+                          ),
+                          Text(
+                            "Block",
+                            style: TextStyle(fontSize: 17),
+                          ),
                         ],
                       ),
                     ),
                   ),
                 ),
               ],
-              ),
+            ),
           ),
         );
-        
+
         /*Column(
           children: <Widget>[
             Expanded(
@@ -400,8 +421,10 @@ class _DashboardState extends State<Dashboard> {
                 size: 30,
                 color: Colors.red[600],
               ),
-              title: Text("Products list",
-              style: TextStyle(color: Colors.black, fontSize: 16.5),),
+              title: Text(
+                "Products list",
+                style: TextStyle(color: Colors.black, fontSize: 16.5),
+              ),
               onTap: () {},
             ),
             Divider(),
@@ -409,7 +432,7 @@ class _DashboardState extends State<Dashboard> {
                 leading: Icon(
                   Icons.add_circle,
                   size: 30,
-                color: Colors.red[600],
+                  color: Colors.red[600],
                 ),
                 title: Text(
                   "Add category",
