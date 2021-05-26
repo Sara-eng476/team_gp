@@ -28,16 +28,16 @@ class _ListUserState extends State<ListUser> {
                 children: snapshot.data.docs
                     .map((e) => ListTile(
                           title: Text(
-                            e['FirstName'],
+                            e['Username'],
                             style: TextStyle(fontSize: 20.0),
                           ),
                           trailing: Text(
                             e['Email'],
-                            style: TextStyle(fontSize: 20.0),
+                            style: TextStyle(fontSize: 15.0),
                           ),
-                          subtitle: Text(e['LastName'],
+                          subtitle: Text(e['Phone'],
                               style: TextStyle(fontSize: 18.0)),
-                          leading: Image.network(e['img']),
+                          leading: Image.network(e['ImageUrl']),
                         ))
                     .toList(),
               );
